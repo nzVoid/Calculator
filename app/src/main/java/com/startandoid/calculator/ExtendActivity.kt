@@ -1,11 +1,11 @@
 package com.startandoid.calculator
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.Back
 import kotlinx.android.synthetic.main.activity_main.Close
@@ -31,11 +31,12 @@ import kotlinx.android.synthetic.main.activity_main.Two
 import kotlinx.android.synthetic.main.activity_main.Zero
 import kotlinx.android.synthetic.main.extent_activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.Result
 
-class MainActivity : AppCompatActivity() {
+class ExtendActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.extent_activity_main)
 
         //цифры
         One.setOnClickListener { add("1", true) }
@@ -51,11 +52,11 @@ class MainActivity : AppCompatActivity() {
         Dot.setOnClickListener { add(".", true) }
 
         //операторы
-//        Sin.setOnClickListener { add("sin(", false) }
-//        Cos.setOnClickListener { add("cos(", false) }
-//        Tan.setOnClickListener { add("tan(", false) }
-//        Sqrt.setOnClickListener { add("sqrt(", false) }
-//        Log.setOnClickListener{add("log(", false)}
+        Sin.setOnClickListener { add("sin(", false) }
+        Cos.setOnClickListener { add("cos(", false) }
+        Tan.setOnClickListener { add("tan(", false) }
+        Sqrt.setOnClickListener { add("sqrt(", false) }
+        Log.setOnClickListener{add("log(", false)}
         Plus.setOnClickListener { add("+", false) }
         Minus.setOnClickListener { add("-", false) }
         Mult.setOnClickListener { add("*", false) }
@@ -123,4 +124,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
